@@ -3,8 +3,6 @@
 #pragma link off all classes;
 #pragma link off all functions;
 #pragma link C++ nestedclasses;
-#pragma link C++ class ND::TLowLevelInfoModule::TLowLevelTFBDigit+;
-#pragma link C++ class ND::TLowLevelInfoModule::TLowLevelHit+;
+#pragma link C++ class ND::NRooTrackerVtx+;
 #endif
-
 
