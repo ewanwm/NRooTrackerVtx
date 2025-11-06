@@ -203,6 +203,7 @@ void NRooTrackerConverter::SetAddresses() {
 int main(int argc, char *argv[]) {
   
   NRooTrackerConverter converter(argv[1], argv[2]);
+  converter.SetAddresses();
 
   for (int entry = 0; entry < converter.GetEntries(); entry++) {
     converter.FillVtx(entry);
