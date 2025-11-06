@@ -211,5 +211,5 @@ int main(int argc, char *argv[]) {
   }
   
   converter.Write();
-
+  converter.Close();
 }
