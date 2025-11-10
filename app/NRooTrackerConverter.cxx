@@ -3,6 +3,7 @@
 #include "TTree.h"
 #include "TFile.h"
 #include "TClonesArray.h"
+#include "TDirectoryFile.h"
 
 // from ND280 software
 #include "TNRooTrackerVtx.hxx"
@@ -28,6 +29,7 @@ class NRooTrackerConverter {
   TTree *fOutputTree;
   TFile *fFile;
   TFile *fOutputFile;
+  TDirectoryFile *fTruthDir;
 
   Int_t fNVtx;        ///< Number of vertices
   TClonesArray *fVtx; ///< Array of vertex objects
@@ -64,6 +66,8 @@ NRooTrackerConverter::NRooTrackerConverter(std::string inputFileName, std::strin
   }
 
   fOutputFile->cd();
+  fTruthDir = new TDirectoryFile("TruthDir", "Truth information from Neut");
+  fTruthDir->cd();
   fOutputTree = new TTree("NRooTrackerVtx", "The Neut information pass-through from nRooTracker tree");
 
   fOutputTree->Branch("NVtx", &fNVtx, "NVtx/I", 32000);
